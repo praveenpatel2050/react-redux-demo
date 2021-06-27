@@ -6,6 +6,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+First you have clone the repo and `cd  react-readux-demo`
+
+### `npm i`
+
+Then
+
 ### `yarn start` 
 OR
 ### `npm start`
