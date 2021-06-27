@@ -1,0 +1,13 @@
+.heading {
+    font-weight: bolder;
+    font-size: 90px;
+    font-family: system-ui, serif;
+}
+.description p{
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.desc-footer p{
+    font-weight: bold;
+}

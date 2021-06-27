@@ -1,0 +1,30 @@
+body {
+    background-image: url("https://app.acquire.io/sec-fst.eae74f5d837246b38cba.png");
+}
+.login-form-main{
+    background-color: wheat;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 40px;
+    border-radius: 0 0 10px 13px;
+    margin-top: -5px;
+}
+.center-header{
+    text-align: center;
+    font-weight: bold;
+    background-color: beige;
+    margin-bottom: 0;
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+}
+
+.full {
+    width: 100%;
+}
+.forms {
+    width: 350px;
+}
+.input {
+    border-radius: 10px;
+}

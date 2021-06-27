@@ -1,0 +1,45 @@
+.product-list-root{
+    margin: 10px 0 10px 0;
+}
+.product-image{
+    border-radius: 5px;
+    border: 1px solid darkgray;
+    text-align: center;
+}
+.product-info {
+
+}
+
+.first-row {
+    padding-top: 10px;
+}
+
+.first-row .product-title {
+    font-family: system-ui, serif;
+    font-size: 20px;
+}
+.first-row .product-price {
+
+}
+.detail-info {
+
+}
+.detail-info p{
+    font-size: 13px;
+    color: gray;
+}
+.product-action .quantity {
+    margin: 10px;
+}
+.product-action .quantity .input-group .form-control{
+    margin: 4px;
+}
+.product-action .quantity .input-group button{
+    margin:4px;
+}
+
+.actions {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
