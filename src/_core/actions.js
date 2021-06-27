@@ -13,8 +13,9 @@ export const actionProductList = (query) => {
 };
 
 export const actionProductAddToCart = (id) => {
+    console.log("in Acion", id);
     return({
-        action : id,
+        item : id,
         type : PRODUCT_ADD_TO_CART,
     });
 };

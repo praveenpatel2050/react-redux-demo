@@ -5,3 +5,4 @@ export const productList = store => store.productList;
 
 export const cartList = store => store.cartList;
 
+export const cartStatus = store => store.lastCartStatus;

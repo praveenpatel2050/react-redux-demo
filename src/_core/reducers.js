@@ -43,22 +43,33 @@ export const list = createReducer(items, {
 
 export const cart = createReducer([], {
     [PRODUCT_ADD_TO_CART] : (state, action) => {
+        console.log("in Reducer", action, action.item);
         if(!action) {
             return state;
         }
-        if(action &&  action.items) {
+        if(action &&  action.item) {
+            console.log("in Reducer Success", action, action.item);
             const {item} = action;
+
             let itemsAdded = items[item.id];
             if(itemsAdded) {
-                itemsAdded.quantity = item.quantity;
+                console.log("item" , itemsAdded);
                 let getStore = localStorage.getItem("cart");
+                console.log("getStore", getStore);
                 if(getStore && Array.isArray(getStore) && getStore.length>0 ) {
                     getStore.push(itemsAdded);
                     localStorage.setItem('cart', getStore);
+                    return {
+                        success :true, message: "Item added to Cart."
+                    }
                 } else {
                     let storeAdd = [];
-                    storeAdd.push(itemsAdded);
+
+                    storeAdd.push(JSON.stringify(itemsAdded));
                     localStorage.setItem('cart', [storeAdd]);
+                    return {
+                        success :true, message: "Item added to Cart."
+                    }
                 }
             }
         }
@@ -89,7 +100,7 @@ export const cartList = createReducer([], {
         if(!action) {
             return state;
         }
-        let cart = localStorage.getItem('cart');
+        let cart = JSON.parse(localStorage.getItem('cart'));
         console.log("In Cart", cart);
         if(cart && Array.isArray(cart) && cart.length > 0) {
             return  cart;
@@ -125,4 +136,5 @@ export default combineReducers ({
     productList : list,
     login: loginDetail,
     cartList,
+    lastCartStatus: cart,
 })

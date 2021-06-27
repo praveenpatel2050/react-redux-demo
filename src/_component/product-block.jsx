@@ -19,7 +19,7 @@ export class ProductBlock extends React.Component{
     };
 
     render() {
-        const {title, description, price } = this.props;
+        const {title, description, price, addToCart, buyNow} = this.props;
         return (
             <>
                 <Col xs={12}  lg={3} sm={6}>
@@ -41,8 +41,8 @@ export class ProductBlock extends React.Component{
                     {/*Product action*/}
                     <div className={"product-action"}>
                         <div className={"actions"}>
-                            <Button variant="primary">Add to Cart</Button>
-                            <Button variant="success">Buy Now</Button>
+                            <Button variant="primary" onClick={addToCart}>Add to Cart</Button>
+                            <Button variant="success" onClick={buyNow}>Buy Now</Button>
                         </div>
                     </div>
                 </div>
