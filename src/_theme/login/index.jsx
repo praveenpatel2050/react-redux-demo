@@ -31,6 +31,8 @@ class Login extends React.Component {
                 console.log("login failed", this.props.loginStatus);
                 this.handleState('message', status.message);
                 this.handleState("showAlert", true);
+            } else {
+                window.location.reload();
             }
         }
     }

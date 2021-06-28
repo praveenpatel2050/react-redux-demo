@@ -54,11 +54,13 @@ class ProductList extends React.Component{
                                     title ={value.name}
                                     description ={value.description}
                                     addToCart={(event)=> {
-
                                          this.props.actionProductAddToCart({id: value.id});
                                     }}
                                     buyNow ={()=> {
-                                        this.props.actionProductAddToCart(value.id);
+                                        this.props.actionProductAddToCart({
+                                            id:value.id
+                                        });
+                                        window.location.assign("/cart");
                                         console.log("buy Now click", value.id);
                                     }}/>);
                     })

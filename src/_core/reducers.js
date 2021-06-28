@@ -51,12 +51,12 @@ export const cart = createReducer([], {
             console.log("in Reducer Success", action, action.item);
             const {item} = action;
 
-            let itemsAdded = items[item.id];
+            let itemsAdded = items.find(d => d.id === item.id);
             if(itemsAdded) {
                 console.log("item" , itemsAdded);
                 let getStore = localStorage.getItem("cart");
                 console.log("getStore", getStore);
-                if(getStore && Array.isArray(getStore) && getStore.length>0 ) {
+                if(getStore && Array.isArray(getStore) && getStore.length > 0 ) {
                     getStore.push(itemsAdded);
                     localStorage.setItem('cart', getStore);
                     return {
@@ -80,7 +80,8 @@ export const cart = createReducer([], {
         }
         if(action &&  action.items) {
             const {item} = action;
-            let itemsRemove = items[item.id];
+            let itemsRemove = items.find(d => d.id === item.id);
+            console.log("itemRemove", itemsRemove);
             if(itemsRemove) {
                 itemsRemove.quantity = item.quantity;
                 let getStore = localStorage.getItem("cart");
@@ -102,9 +103,10 @@ export const cartList = createReducer([], {
         }
         let cart = JSON.parse(localStorage.getItem('cart'));
         console.log("In Cart", cart);
-        if(cart && Array.isArray(cart) && cart.length > 0) {
+        // if(cart && Array.isArray(cart) && cart.length > 0) {
             return  cart;
-        }
+        // }
+        // return cart;
 }
 });
 export const loginDetail = createReducer(false, {

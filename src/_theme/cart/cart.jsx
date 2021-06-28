@@ -13,6 +13,10 @@ class Cart extends React.Component{
 
         }
     }
+    componentDidMount() {
+        this.props.actionCartList();
+    }
+
     render() {
         const {cartList} = this.props;
 
